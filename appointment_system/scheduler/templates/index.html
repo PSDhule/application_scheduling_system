@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Scheduling System</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+</head>
+
+<body>
+
+<header>
+    <h1>Application Scheduling System</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="/doctors/">Doctors</a>
+        <a href="/booking/">Booking</a>
+        <a href="/mybooking/">My Booking</a>
+        <a href="/login/">Login</a>
+        <a href="/register/">Register</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Schedule Your Appointments Easily</h2>
+    <p>Book services, choose time slots and manage everything in one place</p>
+
+    <a href="/booking/"><button>Book Appointment</button></a>
+    <a href="/login/"><button>Login</button></a>
+</section>
+
+<section class="services">
+    <h2>Our Services</h2>
+
+    <div class="card" onclick="window.location.href='/doctors'">🩺 Doctor Appointment</div>
+    <div class="card">💇 Salon Booking</div>
+    <div class="card">💼 Consultation</div>
+</section>
+
+<section class="process">
+    <h2>How It Works</h2>
+    <p>1. Register → 2. Select Service → 3. Choose Time Slot → 4. Payment → 5. Admin Approval</p>
+</section>
+
+<section class="features">
+    <h2>Features</h2>
+    <div class="feature-box">
+    <div class="feature">Time Slot</div>
+    <div class="feature">Secure Login</div>
+    <div class="feature">Admin Control</div>
+    <div class="feature">Live Status</div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Application Scheduling System</p>
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

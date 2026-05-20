@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>User Login</h1>
+</header>
+
+<section class="hero">
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="email" name="email" placeholder="Enter Email"><br><br>
+
+    <input type="password" name="password" placeholder="Enter Password"><br><br>
+
+    <button type="submit">Login</button>
+
+</form>
+
+<p style="color:red;">{{ error }}</p>
+
+</section>
+
+</body>
+</html>

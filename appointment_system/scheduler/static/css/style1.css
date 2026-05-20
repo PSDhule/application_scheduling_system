@@ -1,0 +1,796 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background:linear-gradient(to right,#eef7ff,#f7fcff);
+    color:#222;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(120deg,#102a43,#1f5f8b);
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+header h1{
+    font-size:26px;
+    font-weight:700;
+}
+
+/* NAVBAR */
+nav a{
+    color:white;
+    margin-left:18px;
+    text-decoration:none;
+    font-size:15px;
+    padding:8px 14px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:#00c6ff;
+    color:white;
+}
+
+/* HERO SECTION */
+.hero{
+    text-align:center;
+    padding:90px 20px;
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    color:white;
+    border-radius:0 0 50px 50px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+/* BUTTON */
+button{
+    padding:12px 25px;
+    margin:8px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#ff6a00,#ff3c00);
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover{
+    transform:translateY(-4px) scale(1.05);
+}
+
+/* SECTION TITLE */
+section h2{
+    font-size:30px;
+    margin-bottom:25px;
+    color:#10375c;
+}
+
+/* SERVICES */
+.services{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.card{
+    display:inline-block;
+    width:220px;
+    padding:25px;
+    margin:15px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    color:white;
+}
+
+/* PROCESS */
+.process{
+    text-align:center;
+    padding:60px 20px;
+    background:#f1f8ff;
+}
+
+.process p{
+    display:inline-block;
+    background:white;
+    padding:18px 30px;
+    border-radius:18px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    font-size:17px;
+    font-weight:500;
+}
+
+/* FEATURES */
+.features{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.feature-box{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.feature{
+    width:180px;
+    padding:20px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#ff7b00,#ff3c00);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.feature:hover{
+    transform:scale(1.08);
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+}
+
+/* FOOTER */
+footer{
+    margin-top:40px;
+    background:#102a43;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:15px;
+}
+
+/* ================= LOGIN PAGE ================= */
+
+.hero form{
+    background:white;
+    max-width:420px;
+    margin:30px auto;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+.hero form input{
+    width:100%;
+    padding:14px 18px;
+    margin:10px 0;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    font-size:15px;
+    background:#f2f7ff;
+    box-shadow:inset 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.hero form input:focus{
+    background:white;
+    border:2px solid #36d1dc;
+}
+
+.hero form button{
+    width:100%;
+    margin-top:12px;
+}
+
+.hero h3{
+    margin-top:15px;
+    font-size:16px;
+    color:#ffdddd;
+}
+
+/* LOGIN HEADER SMALL */
+body header:has(h1){
+    justify-content:center;
+}
+
+/* Register pages changes */
+.register_body{
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    min-height:100vh;
+}
+
+/* center section */
+
+.hero_section{
+    min-height:calc(100vh - 75px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* box */
+
+.register_box{
+    width:100%;
+    max-width:430px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+    text-align:center;
+}
+
+/* form */
+
+.register_box form{
+    width:100%;
+}
+
+.register_box input{
+    width:100%;
+    padding:14px 18px;
+    margin:10px 0;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    font-size:15px;
+    background:#f2f7ff;
+    box-shadow:inset 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.register_box input:focus{
+    background:white;
+    border:2px solid #36d1dc;
+}
+
+/* button */
+
+.register_box button{
+    width:100%;
+    margin-top:12px;
+    padding:13px;
+    border:none;
+    border-radius:30px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ff7b00,#ff3c00);
+    transition:0.3s;
+}
+
+.register_box button:hover{
+    transform:translateY(-3px);
+}
+
+/* error message */
+
+.error_msg{
+    margin-top:16px;
+    padding:12px;
+    border-radius:12px;
+    background:#ffe5e5;
+    color:#d8000c;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* login line */
+
+.login_text{
+    margin-top:18px;
+    font-size:15px;
+    color:#444;
+}
+
+.login_link{
+    display:inline-block;
+    margin-left:8px;
+    padding:8px 14px;
+    border-radius:20px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.login_link:hover{
+    transform:scale(1.08);
+}
+
+/* Doctor List */
+body.doctors_body{
+    background: linear-gradient(to right,#dbeafe,#eff6ff);
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.doctor_heading{
+    text-align:center;
+    font-size:38px;
+    color:#102a43;
+    margin-bottom:35px;
+    font-weight:700;
+}
+
+.doctor_table{
+    width:90%;
+    margin:auto;
+    border-collapse:collapse;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.doctor_table th{
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    color:white;
+    padding:18px;
+    font-size:18px;
+}
+
+.doctor_table td{
+    padding:16px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+    font-size:16px;
+}
+
+.doctor_table tr:hover{
+    background:#f0f9ff;
+    transition:0.3s;
+    transform:scale(1.01);
+}
+
+.doctor_table tr:last-child td{
+    border-bottom:none;
+}
+
+/* Dashboard page */
+
+.dashboard_body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#e0f7fa,#f8fbff);
+}
+
+/* HEADER */
+
+.dash_header{
+    background:linear-gradient(135deg,#102a43,#1f5f8b);
+    color:white;
+    padding:20px 35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.logo_area h1{
+    margin:0;
+    font-size:30px;
+}
+
+.logo_area p{
+    margin-top:5px;
+    font-size:14px;
+    opacity:0.9;
+}
+
+.dash_header nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.dash_header nav a{
+    color:white;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:10px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.dash_header nav a:hover{
+    background:#36d1dc;
+}
+
+/* HERO */
+
+.dashboard_hero{
+    text-align:center;
+    padding:80px 20px 50px;
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    color:white;
+    border-radius:0 0 45px 45px;
+}
+
+.dashboard_hero h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.dashboard_hero p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.main_btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:white;
+    color:#10375c;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.dashboard_cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.main_btn:hover{
+    transform:scale(1.08);
+}
+
+/* CARDS */
+
+.dashboard_cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:50px 20px;
+}
+
+.dash_card{
+    width:250px;
+    background:white;
+    padding:28px;
+    text-align:center;
+    border-radius:22px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.10);
+    transition:0.3s;
+}
+
+.dash_card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 35px rgba(0,0,0,0.15);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.dash_card h3{
+    color:#10375c;
+    margin-bottom:10px;
+}
+
+.dash_card p{
+    color:#666;
+    font-size:15px;
+    min-height:50px;
+}
+
+.dash_card a{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 22px;
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.dash_card a:hover{
+    transform:scale(1.08);
+}
+
+/* Booking page */
+
+.booking_body{
+    background:linear-gradient(135deg,#dff6ff,#ffffff);
+    min-height:100vh;
+}
+
+.booking_section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.booking_box{
+    width:100%;
+    max-width:520px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.booking_box h2{
+    text-align:center;
+    color:#10375c;
+    margin-bottom:8px;
+}
+
+.booking_box p{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+}
+
+.booking_box label{
+    display:block;
+    margin-top:14px;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#10375c;
+}
+
+.booking_box input,
+.booking_box select{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#f2f7ff;
+    font-size:15px;
+    box-shadow:inset 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.booking_box input:focus,
+.booking_box select:focus{
+    border:2px solid #36d1dc;
+    background:white;
+}
+
+.booking_box button{
+    width:100%;
+    margin-top:22px;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    transition:0.3s;
+}
+
+.booking_box button:hover{
+    transform:translateY(-4px);
+}
+
+.booking_error{
+    background:#ffe5e5;
+    color:#d8000c;
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.mybooking_body{
+    background:linear-gradient(135deg,#eef7ff,#ffffff);
+    min-height:100vh;
+}
+
+.mybooking_section{
+    padding:40px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.mybooking_box{
+    width:100%;
+    max-width:1100px;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.10);
+}
+
+.mybooking_box h2{
+    text-align:center;
+    color:#10375c;
+    margin-bottom:25px;
+}
+
+.booking_table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:18px;
+}
+
+.booking_table th{
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+    color:white;
+    padding:16px;
+}
+
+.booking_table td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+.booking_table tr:hover{
+    background:#f5fbff;
+    transition:0.3s;
+}
+
+.status{
+    padding:8px 14px;
+    border-radius:20px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.approved{
+    background:#28a745;
+}
+
+.rejected{
+    background:#dc3545;
+}
+
+.pending{
+    background:#ff9800;
+}
+
+.no_booking{
+    text-align:center;
+    padding:40px;
+}
+
+.no_booking h3{
+    color:#10375c;
+    margin-bottom:10px;
+}
+
+.no_booking p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    text-align:center;
+}
+
+nav{
+    margin-top:10px;
+}
+
+nav a{
+    display:inline-block;
+    margin:6px;
+}
+
+.hero{
+    padding:60px 15px;
+}
+
+.hero h2{
+    font-size:30px;
+}
+
+.card{
+    width:90%;
+}
+
+.feature{
+    width:90%;
+}
+
+.hero form{
+    width:95%;
+    padding:25px;
+}
+
+.hero_section{
+    padding:15px;
+}
+
+.hero_section form{
+    padding:25px;
+}
+
+.dash_header{
+    flex-direction:column;
+    text-align:center;
+}
+
+.logo_area h1{
+    font-size:24px;
+}
+
+.dash_header nav{
+    justify-content:center;
+    margin-top:15px;
+}
+
+.dashboard_hero h2{
+    font-size:28px;
+}
+
+.dashboard_cards{
+    flex-direction:column;
+    align-items:center;
+}
+
+.dash_card{
+    width:92%;
+}
+
+.register_box{
+    padding:25px;
+}
+
+.login_text{
+    line-height:30px;
+}
+
+.login_link{
+    margin-left:0;
+    margin-top:8px;
+}
+
+.booking_box{
+    padding:25px;
+}
+
+.booking_table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+.mybooking_box{
+    padding:20px;
+}
+
+}

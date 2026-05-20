@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+
+<body class="doctors_body">
+
+<h1 class="doctor_heading">🩺 Doctor Appointment List</h1>
+
+<table class="doctor_table">
+
+<tr>
+    <th>Doctor Name</th>
+    <th>Specialization</th>
+    <th>Experience</th>
+    <th>Fee</th>
+</tr>
+
+{% for doctor in doctors %}
+<tr>
+    <td>{{ doctor.name }}</td>
+    <td>{{ doctor.specialization }}</td>
+    <td>{{ doctor.experience }} yrs</td>
+    <td>₹{{ doctor.fee }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>

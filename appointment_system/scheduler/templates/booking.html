@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Appointment</title>
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+
+<body class="booking_body">
+
+<header class="dash_header">
+
+<div class="logo_area">
+<h1>📅 Book Appointment</h1>
+<p>Choose doctor and schedule your visit</p>
+</div>
+
+<nav>
+<a href="/dashboard/">Dashboard</a>
+<a href="/mybooking/">My Booking</a>
+<a href="/doctors/">Doctors</a>
+<a href="/logout/">Logout</a>
+</nav>
+
+</header>
+
+<section class="booking_section">
+
+<div class="booking_box">
+
+<h2>Schedule Appointment</h2>
+<p>Select doctor, service, date and time</p>
+
+<form method="POST">
+{% csrf_token %}
+
+{% if error %}
+<div class="booking_error">
+{{ error }}
+</div>
+{% endif %}
+
+<!-- PATIENT NAME -->
+<label>Patient Name</label>
+<input type="text" name="patient_name" value="{{ request.session.name }}" placeholder="Enter Patient Name" required>
+
+<!-- DOCTOR -->
+<label>Doctor</label>
+<select name="doctor" required>
+<option value="">Select Doctor</option>
+
+{% for d in doctors %}
+<option value="{{ d.id }}">
+{{ d.name }} - {{ d.specialization.name }} - ₹{{ d.fee }}
+</option>
+{% endfor %}
+
+</select>
+
+<!-- SERVICE -->
+<label>Service</label>
+<select name="service" required>
+<option value="">Select Service</option>
+
+{% for s in services %}
+<option value="{{ s.id }}">
+{{ s.service_name }} - ₹{{ s.price }}
+</option>
+{% endfor %}
+
+</select>
+
+<!-- DATE -->
+<label>Date</label>
+<input type="date" name="date" required>
+
+<!-- TIME -->
+<label>Time</label>
+<input type="time" name="time" required>
+
+<button type="submit">Book Now</button>
+
+</form>
+
+</div>
+
+</section>
+
+</body>
+</html>

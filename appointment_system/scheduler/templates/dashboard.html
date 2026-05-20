@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+
+</head>
+
+<body class="dashboard_body">
+
+<header class="dash_header">
+
+<div class="logo_area">
+<h1>🏥 Welcome {{ name }}</h1>
+<p>Your Health Dashboard</p>
+</div>
+
+<nav>
+<a href="/">Home</a>
+<a href="/doctors/">Doctors</a>
+<a href="/booking/">Book Appointment</a>
+<a href="/mybooking/">My Booking</a>
+<a href="/logout/">Logout</a>
+</nav>
+
+</header>
+
+
+<section class="dashboard_hero">
+
+<h2>Doctor Appointment Scheduling System</h2>
+<p>Manage your appointments quickly, safely and smartly.</p>
+
+<a href="/booking/" class="main_btn">Book Now</a>
+
+</section>
+
+
+<section class="dashboard_cards">
+
+<div class="dash_card">
+<div class="icon">📅</div>
+<h3>Book Appointment</h3>
+<p>Choose doctor, service and time slot instantly.</p>
+<a href="/booking/">Open</a>
+</div>
+
+<div class="dash_card">
+<div class="icon">📋</div>
+<h3>My Booking</h3>
+<p>Track all your appointments status here.</p>
+<a href="/mybooking/">Open</a>
+</div>
+
+<div class="dash_card">
+<div class="icon">🩺</div>
+<h3>Doctors</h3>
+<p>Check specialist doctors with fees.</p>
+<a href="/doctors/">Open</a>
+</div>
+
+<div class="dash_card">
+<div class="icon">🚪</div>
+<h3>Logout</h3>
+<p>Securely logout from your account.</p>
+<a href="/logout/">Open</a>
+</div>
+
+</section>
+
+
+<footer>
+<p>© 2026 Application Scheduling System | Designed by Pragati</p>
+</footer>
+
+</body>
