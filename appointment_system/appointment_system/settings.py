@@ -20,12 +20,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fggc=gpet4efc=f4cd162o=qbtcsug_j^w+*occ)vc7821$2q5'
+SECRET_KEY = 'REMOVED_SECRET_KEY'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -124,3 +125,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR /  'scheduler/static'
 ]
+
+# ADMIN SECURITY
+ADMIN_EMAIL = 'pragatidhule104@gmail.com'

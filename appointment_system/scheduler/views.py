@@ -1,6 +1,22 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.hashers import make_password, check_password
+from django.conf import settings
+
 from .models import Doctor, User, Appointment, Service
 
+def is_admin(request):
+
+    user_id = request.session.get('user_id')
+
+    if not user_id:
+        return False
+
+    user = User.objects.filter(id=user_id).first()
+
+    if not user:
+        return False
+
+    return user.email == settings.ADMIN_EMAIL
 
 # HOME PAGE
 def home(request):
@@ -30,10 +46,10 @@ def register(request):
             })
 
         User.objects.create(
-            name=name,
-            email=email,
-            phone=phone,
-            password=password
+           name=name,
+           email=email,
+           phone=phone,
+           password=make_password(password)
         )
 
         return redirect('/login/')
@@ -49,12 +65,9 @@ def login(request):
         email = request.POST['email']
         password = request.POST['password']
 
-        user = User.objects.filter(
-            email=email,
-            password=password
-        ).first()
+        user = User.objects.filter(email=email).first()
 
-        if user:
+        if user and check_password(password, user.password):
             request.session.flush()
             request.session['user_id'] = user.id
             request.session['name'] = user.name
@@ -62,7 +75,9 @@ def login(request):
             print("LOGIN SUCCESS USER ID:", user.id)
             return redirect('/dashboard/')
 
-        return render(request, 'login.html', {'error': 'Invalid Email or Password'})
+        return render(request, 'login.html', {
+            'error': 'Invalid Email or Password'
+        })
 
     return render(request, 'login.html')
 
@@ -146,15 +161,27 @@ def booking(request):
 
 # ADMIN BOOKINGS
 def admin_booking(request):
+
+    if not is_admin(request):
+        return redirect('/login/')
+
     data = Appointment.objects.all()
+
     return render(request, 'admin_booking.html', {
         'data': data
     })
 
-
 # APPROVE
 def approve(request, id):
+
+    if not is_admin(request):
+        return redirect('/login/')
+
+    if request.method != "POST":
+        return redirect('/admin-booking/')
+
     obj = Appointment.objects.get(id=id)
+
     obj.status = "Approved"
     obj.save()
 
@@ -163,7 +190,15 @@ def approve(request, id):
 
 # REJECT
 def reject(request, id):
+
+    if not is_admin(request):
+        return redirect('/login/')
+
+    if request.method != "POST":
+        return redirect('/admin-booking/')
+
     obj = Appointment.objects.get(id=id)
+
     obj.status = "Rejected"
     obj.save()
 
